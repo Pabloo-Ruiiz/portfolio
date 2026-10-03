@@ -22,11 +22,9 @@ jobs:
         with:
           args: --no-progress --max-retries 2 "**/*.html"
           fail: true
-
   formato:
     name: Formato
     runs-on: ubuntu-latest
-
     steps:
       - name: Descargar el repositorio
         uses: actions/checkout@v4

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-labelledby="title desc">
+  <title id="title">Profile placeholder</title>
+  <desc id="desc">Generic social network no-photo avatar in a dark blue palette.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#111c33"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#67e8f9"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="800" rx="180" fill="url(#bg)"/>
+  <rect width="800" height="800" rx="180" fill="url(#glow)"/>
+  <circle cx="400" cy="320" r="106" fill="#e5eefb" opacity="0.92"/>
+  <path d="M278 652c18-80 84-123 122-123s104 43 122 123" fill="#e5eefb" opacity="0.92"/>
+  <path d="M290 650c20-84 79-130 110-130s90 46 110 130" fill="#38bdf8" opacity="0.08"/>
+  <path d="M336 356c0-36 29-65 64-65s64 29 64 65-29 65-64 65-64-29-64-65z" fill="#e5eefb" opacity="0.9"/>
+  <path d="M270 610c0-68 58-120 130-120s130 52 130 120" fill="#e5eefb" opacity="0.08"/>
+</svg>

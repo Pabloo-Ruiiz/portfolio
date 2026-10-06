@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Task manager project placeholder</title>
+  <desc id="desc">Abstract mockup for a task manager project.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="95" y="95" width="1010" height="610" rx="40" fill="#0b1220" opacity="0.78"/>
+  <rect x="145" y="145" width="240" height="26" rx="13" fill="#e5eefb" opacity="0.55"/>
+  <rect x="145" y="205" width="910" height="90" rx="24" fill="#38bdf8" opacity="0.16"/>
+  <rect x="145" y="320" width="910" height="90" rx="24" fill="#38bdf8" opacity="0.12"/>
+  <rect x="145" y="435" width="910" height="90" rx="24" fill="#38bdf8" opacity="0.1"/>
+  <rect x="145" y="550" width="520" height="90" rx="24" fill="#38bdf8" opacity="0.08"/>
+  <circle cx="940" cy="595" r="46" fill="#67e8f9" opacity="0.85"/>
+  <text x="145" y="690" fill="#e5eefb" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700">Task Manager</text>
+</svg>

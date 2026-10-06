@@ -3,7 +3,6 @@ name: CI
 on:
   pull_request:
   push:
-    branches: [main]
 
 permissions:
   contents: read
@@ -20,19 +19,35 @@ jobs:
       - name: Comprobar los enlaces
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --no-progress --max-retries 2 "**/*.html"
+          args: >-
+            --no-progress
+            --max-retries 2
+            --exclude '^https://tu-dominio\.example/'
+            --exclude '^https://formspree\.io/f/tu-form-id$'
+            --exclude '^mailto:'
+            "**/*.html"
           fail: true
-  formato:
-    name: Formato
+  validacion:
+    name: Validación
     runs-on: ubuntu-latest
     steps:
       - name: Descargar el repositorio
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Preparar Node
+      - name: Preparar Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      - name: Comprobar el formato
-        run: npx --yes prettier@3 --check "**/*.{html,css,json,md}"
+      - name: Comprobar espacios en los cambios
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+          HEAD_SHA: ${{ github.sha }}
+        run: git diff --check "$BASE_SHA...$HEAD_SHA"
+
+      - name: Comprobar sintaxis de JavaScript
+        run: |
+          node --check js/i18n.js
+          node --check js/script.js

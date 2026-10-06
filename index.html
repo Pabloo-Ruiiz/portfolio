@@ -4,25 +4,59 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
+      id="meta-description"
       name="description"
       content="Portfolio personal de Pablo Ruiz, estudiante de DAW y desarrollador web frontend."
+      data-i18n-description="meta.description"
     >
-    <title>Pablo Ruiz | Portfolio web</title>
+    <title data-i18n-title="meta.title">Pablo Ruiz | Portfolio web</title>
+    <meta name="theme-color" content="#0f172a">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Pablo Ruiz | Portfolio web">
+    <meta property="og:description" content="Portfolio personal de Pablo Ruiz, estudiante de DAW y desarrollador web frontend.">
+    <meta property="og:image" content="img/profile.webp">
+    <meta property="og:image:alt" content="Pablo Ruiz">
+    <meta property="og:url" content="https://tu-dominio.example/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pablo Ruiz | Portfolio web">
+    <meta name="twitter:description" content="Portfolio personal de Pablo Ruiz, estudiante de DAW y desarrollador web frontend.">
+    <meta name="twitter:image" content="img/profile.webp">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/favicon.svg">
+    <!-- TODO: Añadir la URL canónica real cuando tengas dominio propio -->
+    <link rel="canonical" href="https://tu-dominio.example/">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Pablo Ruiz",
+        "jobTitle": "Frontend Developer",
+        "url": "https://tu-dominio.example/",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Alzira",
+          "addressRegion": "Valencia",
+          "addressCountry": "ES"
+        },
+        "knowsAbout": ["HTML", "CSS", "JavaScript", "Frontend", "Accesibilidad web"]
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     >
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/i18n.js"></script>
+    <script defer src="js/script.js"></script>
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+    <a class="skip-link" href="#main-content" data-i18n="skipLink">Saltar al contenido principal</a>
     <div id="top" tabindex="-1"></div>
 
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="Volver al inicio">
+      <a class="brand" href="#top" data-i18n-aria="brand.label">
         <span class="brand-mark" aria-hidden="true">
           <svg viewBox="0 0 48 48" role="img" aria-label="Logo de Pablo Ruiz">
             <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="2.5" opacity="0.9" />
@@ -39,13 +73,14 @@
         type="button"
         aria-expanded="false"
         aria-controls="site-navigation"
+        data-i18n-aria="nav.menuToggle"
       >
         <span class="menu-toggle__line"></span>
         <span class="menu-toggle__line"></span>
-        <span class="sr-only">Abrir menú</span>
+        <span class="sr-only" data-i18n="nav.menuToggle">Abrir menú</span>
       </button>
 
-      <nav id="site-navigation" class="site-nav" aria-label="Navegación principal">
+      <nav id="site-navigation" class="site-nav" data-i18n-aria="nav.mainLabel" aria-label="Navegación principal">
         <a class="nav-link" href="#top" data-i18n="nav.home">Home</a>
         <a class="nav-link" href="#about-section" data-i18n="nav.about">About</a>
         <a class="nav-link" href="#projects-section" data-i18n="nav.projects">Projects</a>
@@ -53,10 +88,22 @@
         <a class="nav-link" href="#contact-section" data-i18n="nav.contact">Contact</a>
       </nav>
 
-      <div class="language-switcher" role="group" aria-label="Selector de idioma">
-        <button class="language-switcher__button is-active" type="button" data-language="es">ES</button>
-        <button class="language-switcher__button" type="button" data-language="va">VAL</button>
-        <button class="language-switcher__button" type="button" data-language="en">EN</button>
+      <div class="header-actions">
+        <div class="language-switcher" role="group" data-i18n-aria="language.label" aria-label="Selector de idioma">
+          <button class="language-switcher__button is-active" type="button" data-language="es">ES</button>
+          <button class="language-switcher__button" type="button" data-language="va">VAL</button>
+          <button class="language-switcher__button" type="button" data-language="en">EN</button>
+        </div>
+
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Cambiar tema"
+          title="Cambiar tema"
+          aria-live="polite"
+        >
+          <span class="theme-toggle__icon" aria-hidden="true">☀️</span>
+        </button>
       </div>
     </header>
 
@@ -65,13 +112,15 @@
         <div class="hero__content">
           <p class="eyebrow" data-i18n="hero.eyebrow">Frontend Developer</p>
           <h1 id="hero-title">Pablo Ruiz</h1>
-          <p class="hero__subtitle" data-i18n="hero.subtitle">Estudiante de DAW / Desarrollador web</p>
+          <p class="hero__subtitle" data-i18n="hero.subtitle">Estudiante de DAW · 2.º curso</p>
           <p class="hero__description" data-i18n="hero.description">
-            Soy Pablo Ruiz Gandia, desarrollador de aplicaciones web en formación. Me gusta
-            construir experiencias digitales claras, funcionales y con personalidad.
+            Soy Pablo Ruiz Gandia, estudiante de DAW y desarrollador web en formación. Me gusta crear interfaces limpias, accesibles y funcionales para la web.
+            Estoy buscando prácticas o mi primer empleo en desarrollo web.
           </p>
           <div class="hero__actions">
             <a class="button button--primary" href="#projects-section" data-i18n="hero.primaryCta">Ver proyectos</a>
+            <!-- TODO: Añadir el PDF real de tu CV en /docs/cv-pablo-ruiz.pdf -->
+            <a class="button button--secondary" href="/docs/cv-pablo-ruiz.pdf" data-i18n="hero.cv">Descargar CV</a>
             <a class="button button--secondary" href="#contact-section" data-i18n="hero.secondaryCta">Contactar</a>
           </div>
           <ul class="hero__meta" aria-label="Datos de contacto rápidos">
@@ -84,9 +133,13 @@
         <figure class="hero__media">
           <div class="hero__portrait-frame">
             <img
-              src="img/profile-placeholder.svg"
+              src="img/profile.webp"
               alt="Foto de perfil de Pablo Ruiz"
               class="hero__portrait"
+              data-i18n-alt="hero.portraitAlt"
+              width="720"
+              height="720"
+              fetchpriority="high"
             >
           </div>
           <figcaption data-i18n="hero.caption">Frontend Developer · Pablo Ruiz</figcaption>
@@ -100,12 +153,42 @@
         </div>
         <div class="content-card">
           <p data-i18n="about.body">
-            Estoy estudiando Desarrollo de Aplicaciones Web y disfruto entendiendo cómo funcionan
-            las cosas para después transformarlas en soluciones sencillas. Mi camino combina una
-            base sólida en tecnologías web con ganas de seguir aprendiendo cada día. Me interesa
-            especialmente el desarrollo frontend, la experiencia de usuario y el código que se
-            siente tan bien como se ve.
+            Soy estudiante de 2.º de DAW y me interesa construir soluciones web con una base sólida en HTML, CSS, JavaScript y buenas prácticas de accesibilidad. Estoy aprendiendo a crear experiencias claras, reutilizables y bien estructuradas para la web.
+            Busco prácticas o mi primer empleo como desarrollador web junior.
           </p>
+        </div>
+      </section>
+
+      <section id="experience-section" class="section content-section">
+        <div class="section__header">
+          <p class="eyebrow" data-i18n="experience.eyebrow">Experiencia y formación</p>
+          <h2 data-i18n="experience.title">Experiencia y formación</h2>
+        </div>
+
+        <div class="timeline" aria-label="Línea de tiempo de formación y experiencia">
+          <article class="timeline__item">
+            <span class="timeline__date" data-i18n="experience.dawDate">2024 - Actualidad</span>
+            <div class="timeline__content">
+              <h3 data-i18n="experience.dawTitle">DAW · 2.º curso · IES Doctor Lluís Simarro</h3>
+              <p data-i18n="experience.dawBody">Estoy cursando Desarrollo de Aplicaciones Web y reforzando conocimientos en programación, bases de datos, desarrollo frontend y creación de aplicaciones web.</p>
+            </div>
+          </article>
+
+          <article class="timeline__item">
+            <span class="timeline__date" data-i18n="experience.bachDate">Bachillerato</span>
+            <div class="timeline__content">
+              <h3 data-i18n="experience.bachTitle">Bachillerato</h3>
+              <p data-i18n="experience.bachBody">Completé la etapa de bachillerato y reforcé la base académica, la organización y el trabajo constante para avanzar en estudios técnicos y profesionales.</p>
+            </div>
+          </article>
+
+          <article class="timeline__item">
+            <span class="timeline__date" data-i18n="experience.workDate">Experiencia previa</span>
+            <div class="timeline__content">
+              <h3 data-i18n="experience.workTitle">Almacén, reparto y carpintería</h3>
+              <p data-i18n="experience.workBody">He trabajado en entornos de almacén, reparto y carpintería, donde he desarrollado responsabilidad, trabajo en equipo, organización y capacidad para cumplir plazos.</p>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -116,8 +199,7 @@
             <h2 data-i18n="projects.title">Projects</h2>
           </div>
           <p class="section__intro" data-i18n="projects.intro">
-            Tres ejemplos editables para mostrar tus trabajos. Cambia título, texto, enlaces e
-            imágenes cuando quieras.
+            Una selección de proyectos que he desarrollado durante mi formación.
           </p>
         </div>
 
@@ -125,16 +207,24 @@
           <article class="project-card">
             <img
               class="project-card__image"
-              src="img/project-1.jpg"
-              alt="Captura del proyecto Portfolio personal"
+              src="img/project-1.webp"
+              alt="Captura del proyecto 1"
+              data-i18n-alt="projects.one.imageAlt"
+              width="800"
+              height="500"
+              loading="lazy"
+              decoding="async"
             >
             <div class="project-card__body">
-              <h3 data-i18n="projects.one.title">Portfolio personal</h3>
-              <p data-i18n="projects.one.body">Web de presentación personal con navegación por secciones, diseño responsive y formulario de contacto validado.</p>
+              <h3 data-i18n="projects.one.title">Proyecto 1</h3>
+              <p><strong data-i18n="projects.problem">Problema:</strong> <span data-i18n="projects.one.problem"><!-- TODO: Describe el problema real que resolvía este proyecto --></span></p>
+              <p><strong data-i18n="projects.roleLabel">Rol:</strong> <span data-i18n="projects.one.role"><!-- TODO: Define tu rol real --></span></p>
               <p class="project-card__tech" data-i18n="projects.one.tech">HTML · CSS · JavaScript</p>
               <div class="project-card__links">
-                <a href="https://example.com" target="_blank" rel="noreferrer" data-i18n="projects.demo">Demo</a>
-                <a href="https://github.com/" target="_blank" rel="noreferrer" data-i18n="projects.code">Code</a>
+                <!-- TODO: Añadir la URL real de la demo del proyecto 1 -->
+                <a href="#TODO-demo-proyecto-1" target="_blank" rel="noopener noreferrer" data-i18n="projects.demo">Demo</a>
+                <!-- TODO: Añadir la URL real del repositorio del proyecto 1 -->
+                <a href="#TODO-codigo-proyecto-1" target="_blank" rel="noopener noreferrer" data-i18n="projects.code">Código</a>
               </div>
             </div>
           </article>
@@ -142,16 +232,24 @@
           <article class="project-card">
             <img
               class="project-card__image"
-              src="img/project-2.jpg"
-              alt="Captura del proyecto Task Manager"
+              src="img/project-2.webp"
+              alt="Captura del proyecto 2"
+              data-i18n-alt="projects.two.imageAlt"
+              width="800"
+              height="500"
+              loading="lazy"
+              decoding="async"
             >
             <div class="project-card__body">
-              <h3 data-i18n="projects.two.title">Task Manager</h3>
-              <p data-i18n="projects.two.body">Aplicación para organizar tareas con filtros, estado local y una interfaz sencilla para uso diario.</p>
+              <h3 data-i18n="projects.two.title">Proyecto 2</h3>
+              <p><strong data-i18n="projects.problem">Problema:</strong> <span data-i18n="projects.two.problem"><!-- TODO: Describe el problema real que resolvía este proyecto --></span></p>
+              <p><strong data-i18n="projects.roleLabel">Rol:</strong> <span data-i18n="projects.two.role"><!-- TODO: Define tu rol real --></span></p>
               <p class="project-card__tech" data-i18n="projects.two.tech">JavaScript · LocalStorage · CSS Grid</p>
               <div class="project-card__links">
-                <a href="https://example.com" target="_blank" rel="noreferrer" data-i18n="projects.demo">Demo</a>
-                <a href="https://github.com/" target="_blank" rel="noreferrer" data-i18n="projects.code">Code</a>
+                <!-- TODO: Añadir la URL real de la demo del proyecto 2 -->
+                <a href="#TODO-demo-proyecto-2" target="_blank" rel="noopener noreferrer" data-i18n="projects.demo">Demo</a>
+                <!-- TODO: Añadir la URL real del repositorio del proyecto 2 -->
+                <a href="#TODO-codigo-proyecto-2" target="_blank" rel="noopener noreferrer" data-i18n="projects.code">Código</a>
               </div>
             </div>
           </article>
@@ -159,16 +257,24 @@
           <article class="project-card">
             <img
               class="project-card__image"
-              src="img/project-3.jpg"
-              alt="Captura del proyecto Landing de producto"
+              src="img/project-3.webp"
+              alt="Captura del proyecto 3"
+              data-i18n-alt="projects.three.imageAlt"
+              width="800"
+              height="500"
+              loading="lazy"
+              decoding="async"
             >
             <div class="project-card__body">
-              <h3 data-i18n="projects.three.title">Landing de producto</h3>
-              <p data-i18n="projects.three.body">Landing page enfocada en conversión, con secciones de venta, testimonios y llamada a la acción.</p>
+              <h3 data-i18n="projects.three.title">Proyecto 3</h3>
+              <p><strong data-i18n="projects.problem">Problema:</strong> <span data-i18n="projects.three.problem"><!-- TODO: Describe el problema real que resolvía este proyecto --></span></p>
+              <p><strong data-i18n="projects.roleLabel">Rol:</strong> <span data-i18n="projects.three.role"><!-- TODO: Define tu rol real --></span></p>
               <p class="project-card__tech" data-i18n="projects.three.tech">HTML5 · CSS3 · Responsive Design</p>
               <div class="project-card__links">
-                <a href="https://example.com" target="_blank" rel="noreferrer" data-i18n="projects.demo">Demo</a>
-                <a href="https://github.com/" target="_blank" rel="noreferrer" data-i18n="projects.code">Code</a>
+                <!-- TODO: Añadir la URL real de la demo del proyecto 3 -->
+                <a href="#TODO-demo-proyecto-3" target="_blank" rel="noopener noreferrer" data-i18n="projects.demo">Demo</a>
+                <!-- TODO: Añadir la URL real del repositorio del proyecto 3 -->
+                <a href="#TODO-codigo-proyecto-3" target="_blank" rel="noopener noreferrer" data-i18n="projects.code">Código</a>
               </div>
             </div>
           </article>
@@ -181,47 +287,41 @@
           <h2 data-i18n="skills.title">Skills &amp; Tools</h2>
         </div>
 
-        <div class="tag-cloud" aria-label="Lista de habilidades y herramientas" data-i18n-aria="skills.cloudLabel">
-          <a class="skill-link" href="https://developer.mozilla.org/docs/Web/HTML" target="_blank" rel="noreferrer" aria-label="HTML, sitio oficial">
-            <img class="skill-icon-image" src="img/icons/html.svg" alt="" aria-hidden="true"><span>HTML</span>
-          </a>
-          <a class="skill-link" href="https://www.w3.org/Style/CSS/" target="_blank" rel="noreferrer" aria-label="CSS, sitio oficial">
-            <img class="skill-icon-image" src="img/icons/css.svg" alt="" aria-hidden="true"><span>CSS</span>
-          </a>
-          <a class="skill-link" href="https://developer.mozilla.org/docs/Web/JavaScript" target="_blank" rel="noreferrer" aria-label="JavaScript, sitio oficial">
-            <img class="skill-icon-image" src="img/icons/javascript.svg" alt="" aria-hidden="true"><span>JavaScript</span>
-          </a>
-          <a class="skill-link" href="https://git-scm.com/" target="_blank" rel="noreferrer" aria-label="Git, sitio oficial">
-            <img class="skill-icon-image" src="img/icons/git.svg" alt="" aria-hidden="true"><span>Git</span>
-          </a>
-          <a class="skill-link" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub, sitio oficial">
-            <img class="skill-icon-image" src="img/icons/github.svg" alt="" aria-hidden="true"><span>GitHub</span>
-          </a>
-          <a class="skill-link" href="https://code.visualstudio.com/" target="_blank" rel="noreferrer" aria-label="Visual Studio Code, sitio oficial">
-            <img class="skill-icon-image" src="img/icons/vscode.svg" alt="" aria-hidden="true"><span>VS Code</span>
-          </a>
-          <a class="skill-link" href="https://nodejs.org/" target="_blank" rel="noreferrer" aria-label="Node.js, sitio oficial">
-            <img class="skill-icon-image" src="img/icons/nodejs.svg" alt="" aria-hidden="true"><span>Node.js</span>
-          </a>
-          <a class="skill-link" href="https://expressjs.com/" target="_blank" rel="noreferrer" aria-label="Express.js, sitio oficial">
-            <img class="skill-icon-image" src="img/icons/express.svg" alt="" aria-hidden="true"><span>Express.js</span>
-          </a>
-          <a class="skill-link" href="https://react.dev/" target="_blank" rel="noreferrer" aria-label="React, sitio oficial">
-            <img class="skill-icon-image" src="img/icons/react.svg" alt="" aria-hidden="true"><span>React</span>
-          </a>
-          <a class="skill-link" href="https://www.mongodb.com/" target="_blank" rel="noreferrer" aria-label="MongoDB, sitio oficial">
-            <img class="skill-icon-image" src="img/icons/mongodb.svg" alt="" aria-hidden="true"><span>MongoDB</span>
-          </a>
-          <a class="skill-link" href="https://www.figma.com/" target="_blank" rel="noreferrer" aria-label="Figma, sitio oficial">
-            <img class="skill-icon-image" src="img/icons/figma.svg" alt="" aria-hidden="true"><span>Figma</span>
-          </a>
-          <a class="skill-link" href="https://developer.mozilla.org/docs/Learn_web_development/Core/CSS_layout/Responsive_Design" target="_blank" rel="noreferrer" aria-label="Responsive Design, guía oficial en MDN">
-            <img class="skill-icon-image" src="img/icons/responsive.svg" alt="" aria-hidden="true"><span>Responsive Design</span>
-          </a>
-          <a class="skill-link" href="https://developer.mozilla.org/docs/Web/Accessibility" target="_blank" rel="noreferrer" aria-label="Accessibility, documentación oficial en MDN">
-            <img class="skill-icon-image" src="img/icons/accessibility.svg" alt="" aria-hidden="true"><span>Accessibility</span>
-          </a>
+        <div class="skills-groups" aria-label="Habilidades por nivel">
+          <div class="skill-group">
+            <h3 data-i18n="skills.dailyTitle">Uso a diario</h3>
+            <div class="tag-cloud" aria-label="Tecnologías que uso a diario">
+              <span class="skill-link"><img class="skill-icon-image" src="img/icons/html.svg" alt="" aria-hidden="true"><span>HTML</span></span>
+              <span class="skill-link"><img class="skill-icon-image" src="img/icons/css.svg" alt="" aria-hidden="true"><span>CSS</span></span>
+              <span class="skill-link"><img class="skill-icon-image" src="img/icons/javascript.svg" alt="" aria-hidden="true"><span>JavaScript</span></span>
+              <span class="skill-link"><img class="skill-icon-image" src="img/icons/git.svg" alt="" aria-hidden="true"><span>Git</span></span>
+              <span class="skill-link"><img class="skill-icon-image" src="img/icons/github.svg" alt="" aria-hidden="true"><span>GitHub</span></span>
+              <span class="skill-link"><img class="skill-icon-image" src="img/icons/vscode.svg" alt="" aria-hidden="true"><span>VS Code</span></span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3 data-i18n="skills.strongTitle">Con base sólida</h3>
+            <div class="tag-cloud" aria-label="Tecnologías con base sólida">
+              <span class="skill-link"><img class="skill-icon-image" src="img/icons/react.svg" alt="" aria-hidden="true"><span>React</span></span>
+              <span class="skill-link"><img class="skill-icon-image" src="img/icons/nodejs.svg" alt="" aria-hidden="true"><span>Node.js</span></span>
+              <span class="skill-link"><img class="skill-icon-image" src="img/icons/express.svg" alt="" aria-hidden="true"><span>Express.js</span></span>
+              <span class="skill-link"><img class="skill-icon-image" src="img/icons/mongodb.svg" alt="" aria-hidden="true"><span>MongoDB</span></span>
+              <span class="skill-link"><svg class="skill-icon-image" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect x="4" y="4" width="40" height="40" rx="12" fill="#7dd3fc"/><path d="M14 16h20v4H14zm0 8h20v4H14zm0 8h12v4H14z" fill="#082033"/><path d="M31 28h5.5v8H31z" fill="#082033"/></svg><span>SQL</span></span>
+              <span class="skill-link"><img class="skill-icon-image" src="img/icons/responsive.svg" alt="" aria-hidden="true"><span>Responsive</span></span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3 data-i18n="skills.learningTitle">Aprendiendo</h3>
+            <div class="tag-cloud" aria-label="Tecnologías que estoy aprendiendo actualmente">
+              <span class="skill-link"><img class="skill-icon-image" src="img/icons/accessibility.svg" alt="" aria-hidden="true"><span>Accessibility</span></span>
+              <span class="skill-link"><svg class="skill-icon-image" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect x="4" y="4" width="40" height="40" rx="12" fill="#7dd3fc"/><text x="24" y="29" text-anchor="middle" font-size="16" font-weight="700" fill="#082033" font-family="Arial, sans-serif">TS</text></svg><span>TypeScript</span></span>
+              <span class="skill-link"><svg class="skill-icon-image" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect x="4" y="4" width="40" height="40" rx="12" fill="#7dd3fc"/><path d="M15 24.5l7 7 11-16" fill="none" stroke="#082033" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Testing</span></span>
+            </div>
+          </div>
         </div>
+        <!-- TODO: Revisa con el reclutador qué tecnologías conviene quitar según tu nivel real -->
       </section>
 
       <section id="contact-section" class="section content-section contact-section">
@@ -236,47 +336,77 @@
         </div>
 
         <div class="contact-layout">
-          <form class="contact-form" novalidate>
-            <div class="field">
+          <form
+            class="contact-form"
+            action="https://formspree.io/f/tu-form-id"
+            method="POST"
+            novalidate
+            data-formspree-endpoint="https://formspree.io/f/tu-form-id"
+          >
+            <div class="field" data-field="name">
               <label for="name" data-i18n="contact.nameLabel">Nombre</label>
-              <input id="name" name="name" type="text" autocomplete="name" required>
+              <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error" data-i18n-placeholder="contact.namePlaceholder" placeholder="Tu nombre">
+              <p id="name-error" class="field-error" aria-live="polite"></p>
             </div>
-            <div class="field">
+
+            <div class="field" data-field="email">
               <label for="email" data-i18n="contact.emailLabel">Email</label>
-              <input id="email" name="email" type="email" autocomplete="email" required>
+              <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error" data-i18n-placeholder="contact.emailPlaceholder" placeholder="tu@email.com">
+              <p id="email-error" class="field-error" aria-live="polite"></p>
             </div>
-            <div class="field">
+
+            <div class="field" data-field="message">
               <label for="message" data-i18n="contact.messageLabel">Mensaje</label>
-              <textarea id="message" name="message" rows="6" required></textarea>
+              <textarea id="message" name="message" rows="6" required aria-describedby="message-error" data-i18n-placeholder="contact.messagePlaceholder" placeholder="Escribe tu mensaje aquí..."></textarea>
+              <p id="message-error" class="field-error" aria-live="polite"></p>
             </div>
+
+            <div class="field field--honeypot" aria-hidden="true">
+              <label for="website" data-i18n="contact.honeypotLabel">Website</label>
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
             <button class="button button--primary" type="submit" data-i18n="contact.send">Send</button>
             <p class="form-status" aria-live="polite"></p>
           </form>
 
           <aside class="contact-card" aria-label="Información de contacto">
             <h3 data-i18n="contact.quickTitle">Datos rápidos</h3>
-            <p data-i18n="contact.role">Frontend Developer</p>
-            <p data-i18n="contact.name">Pablo Ruiz</p>
             <p data-i18n="contact.location">Alzira, Valencia</p>
-            <p>pablo.ruiz.gandia@gmail.com</p>
+            <div class="contact-links" aria-label="Enlaces de contacto directo" data-i18n-aria="footer.socialLabel">
+              <a href="mailto:?subject=Contacto%20desde%20el%20portfolio" aria-label="Enviar un correo electrónico" data-i18n="contact.emailDirect">
+                <svg class="contact-link__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2.2-.25 6.8 5.3 6.8-5.3H5.2Zm13.05 1.3-6.25 4.86a1 1 0 0 1-1.2 0L5.75 7.8v9.45c0 .41.34.75.75.75h10.5c.41 0 .75-.34.75-.75V7.8Z" fill="currentColor"/>
+                </svg>
+                <span>Email</span>
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" data-i18n="contact.githubDirect">
+                <svg class="contact-link__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48v-1.7c-2.77.6-3.36-1.18-3.36-1.18-.45-1.14-1.1-1.44-1.1-1.44-.9-.62.07-.61.07-.61 1 .07 1.52 1.02 1.52 1.02.9 1.52 2.35 1.08 2.93.83.09-.64.35-1.08.64-1.33-2.21-.25-4.54-1.1-4.54-4.89 0-1.08.38-1.96 1.01-2.65-.1-.25-.44-1.26.1-2.62 0 0 .82-.26 2.7 1a9.13 9.13 0 0 1 4.92 0c1.88-1.26 2.7-1 2.7-1 .54 1.36.2 2.37.1 2.62.63.7 1.01 1.57 1.01 2.65 0 3.8-2.34 4.64-4.57 4.88.36.31.68.92.68 1.86v2.76c0 .26.18.59.69.48A10 10 0 0 0 12 2Z" fill="currentColor"/>
+                </svg>
+                <span>GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" data-i18n="contact.linkedinDirect">
+                <svg class="contact-link__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M6.94 8.5A1.56 1.56 0 1 1 6.94 5.4a1.56 1.56 0 0 1 0 3.1ZM5.5 9.65h2.9v8.85H5.5V9.65Zm5.08 0h2.77v1.2h.04c.39-.73 1.34-1.5 2.76-1.5 2.96 0 3.5 1.95 3.5 4.48v6.67h-2.9v-6.25c0-1.49-.03-3.41-2.08-3.41-2.09 0-2.4 1.63-2.4 3.31v6.35h-2.9V9.65Z" fill="currentColor"/>
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+            </div>
             <p data-i18n="contact.note">Portfolio personal</p>
+            <!-- TODO: Añadir URL real de GitHub, LinkedIn y email profesional cuando los tengas -->
           </aside>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div>
-        <strong>Pablo Ruiz</strong>
-        <p data-i18n="footer.role">Frontend Developer</p>
-      </div>
+      <p>© <span id="current-year"></span> Pablo Ruiz</p>
 
       <div class="footer-links" aria-label="Redes sociales" data-i18n-aria="footer.socialLabel">
-        <a href="https://github.com/" target="_blank" rel="noreferrer" data-i18n="footer.github">GitHub</a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" data-i18n="footer.linkedin">LinkedIn</a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" data-i18n="footer.github">GitHub</a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" data-i18n="footer.linkedin">LinkedIn</a>
       </div>
-
-      <p>© <span id="current-year"></span> Pablo Ruiz</p>
     </footer>
   </body>
 </html>

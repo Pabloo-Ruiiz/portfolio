@@ -938,11 +938,23 @@ h3 {
   }
 
   .hero {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: auto;
     padding-top: 1rem;
+    gap: 1.5rem;
+  }
+
+  .hero__media {
+    display: none;
   }
 
   .hero__portrait-frame {
-    min-height: 17rem;
+    min-height: 0;
+    padding: 1rem;
+  }
+
+  .hero__portrait {
+    width: min(100%, 14rem);
   }
 
   .site-footer {

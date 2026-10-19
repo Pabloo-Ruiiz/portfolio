@@ -51,3 +51,15 @@ jobs:
         run: |
           node --check js/i18n.js
           node --check js/script.js
+  calidad:
+    name: Presupuesto de calidad
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Auditar con Lighthouse
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: ./lighthouserc.json
+          uploadArtifacts: true

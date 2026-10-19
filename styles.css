@@ -295,6 +295,12 @@ main {
   background: var(--surface);
 }
 
+:root[data-theme="light"] .theme-toggle {
+  background: rgba(255, 255, 255, 0.82);
+  border-color: rgba(14, 165, 233, 0.18);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+}
+
 .theme-toggle__icon {
   font-size: 1.1rem;
   line-height: 1;
